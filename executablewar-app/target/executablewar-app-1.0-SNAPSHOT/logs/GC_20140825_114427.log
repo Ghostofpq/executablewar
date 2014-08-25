@@ -1,0 +1,4 @@
+2.782: [GC [PSYoungGen: 39360K->6514K(45888K)] 39360K->9118K(255616K), 0.0264773 secs] [Times: user=0.08 sys=0.00, real=0.04 secs] 
+3.163: [GC [PSYoungGen: 45874K->6510K(45888K)] 48478K->16194K(255616K), 0.0233552 secs] [Times: user=0.03 sys=0.00, real=0.02 secs] 
+3.523: [GC [PSYoungGen: 45870K->6517K(45888K)] 55554K->24612K(255616K), 0.0229031 secs] [Times: user=0.03 sys=0.01, real=0.02 secs] 
+4.947: [GC [PSYoungGen: 45877K->6497K(85248K)] 63972K->32064K(294976K), 0.0214210 secs]
