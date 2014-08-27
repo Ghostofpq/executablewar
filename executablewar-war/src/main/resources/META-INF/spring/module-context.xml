@@ -12,6 +12,6 @@
     <!-- ====== HERE BEGINS YOUR JOB ====== -->
     <mvc:annotation-driven/>
     <context:annotation-config/>
-    <context:component-scan base-package="org.gop.executablewar"/>
+    <context:component-scan base-package="com.gop.executablewar"/>
     <!-- ====== HERE ENDS YOUR JOB ====== -->
 </beans>
