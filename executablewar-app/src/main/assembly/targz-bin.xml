@@ -15,6 +15,18 @@
             <filtered>true</filtered>
             <includes>
                 <include>startup.sh</include>
+                <include>replace.sh</include>
+            </includes>
+        </fileSet>
+        <fileSet>
+            <directory>../${module.name}-war/src/main/resources</directory>
+            <outputDirectory>conf</outputDirectory>
+            <fileMode>0755</fileMode>
+            <directoryMode>0755</directoryMode>
+            <lineEnding>unix</lineEnding>
+            <filtered>true</filtered>
+            <includes>
+                <include>**/**</include>
             </includes>
         </fileSet>
         <fileSet>

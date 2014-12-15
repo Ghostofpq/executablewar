@@ -8,27 +8,19 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <name>MODULE APP</name>
-    <artifactId>executablewar-app</artifactId>
+    <name>MODULE DOCKER</name>
+    <artifactId>executablewar-docker</artifactId>
     <packaging>pom</packaging>
 
     <dependencies>
         <dependency>
             <groupId>${project.groupId}</groupId>
-            <artifactId>${module.name}-war</artifactId>
-            <type>war</type>
+            <artifactId>${module.name}-app</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
 
     <build>
-        <resources>
-            <resource>
-                <directory>../${module.name}-war/src/main/java/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
-
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -36,21 +28,16 @@
                 <executions>
                     <execution>
                         <phase>package</phase>
-                        <goals><goal>copy</goal></goals>
+                        <goals>
+                            <goal>copy</goal>
+                        </goals>
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>org.mortbay.jetty</groupId>
-                                    <artifactId>jetty-runner</artifactId>
-                                    <version>8.1.9.v20130131</version>
-                                    <destFileName>jetty-runner.jar</destFileName>
-                                </artifactItem>
-                                <artifactItem>
                                     <groupId>${project.groupId}</groupId>
-                                    <artifactId>${module.name}-war</artifactId>
-                                    <type>war</type>
+                                    <artifactId>${module.name}-app</artifactId>
+                                    <type>tar.gz</type>
                                     <version>${project.version}</version>
-                                    <destFileName>${module.name}.war</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
@@ -64,7 +51,7 @@
                 <configuration>
                     <appendAssemblyId>false</appendAssemblyId>
                     <descriptors>
-                        <descriptor>${project.basedir}/src/main/assembly/targz-bin.xml</descriptor>
+                        <descriptor>${project.basedir}/src/assembly/targz-bin.xml</descriptor>
                     </descriptors>
                 </configuration>
                 <executions>
