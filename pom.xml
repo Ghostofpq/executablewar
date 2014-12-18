@@ -51,6 +51,14 @@
             <properties>
                 <!-- env specific properties like mongodb -->
             </properties>
+            <build>
+                <resources>
+                    <resource>
+                        <directory>${project.basedir}/src/main/resources</directory>
+                        <filtering>true</filtering>
+                    </resource>
+                </resources>
+            </build>
         </profile>
 
         <profile>
@@ -129,12 +137,7 @@
         </pluginManagement>
 
         <!-- filtering of resources -->
-        <resources>
-            <resource>
-                <directory>${project.basedir}/src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+
         <testResources>
             <testResource>
                 <directory>${project.basedir}/src/test/resources</directory>

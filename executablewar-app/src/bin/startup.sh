@@ -42,7 +42,6 @@ JAVA_OPTS=$JAVA_OPTS" -DLOGS_FOLDER=$LOGS_FOLDER"
 JAVA_OPTS=$JAVA_OPTS" -DLOGS_ARCHIVE_FOLDER=$LOGS_ARCHIVE_FOLDER"
 
 env | sed "s/=/\n/" | sed "s/\//\\\\\//g" | xargs -n 2 -d "\n" ./replace.sh ../conf/application.properties
-env | sed "s/=/\n/" | sed "s/\//\\\\\//g" | xargs -n 2 -d "\n" ./replace.sh ../conf/communication.properties
-env | sed "s/=/\n/" | sed "s/\//\\\\\//g" | xargs -n 2 -d "\n" ./replace.sh ../conf/META-INF/spring/persistence-context.xml
+env | sed "s/=/\n/" | sed "s/\//\\\\\//g" | xargs -n 2 -d "\n" ./replace.sh ../conf/META-INF/spring/module-context.xml
 
 java $JAVA_OPTS% -jar ../lib/jetty-runner.jar --port ${module.http.port} ../lib/${module.name}.war --classes ../conf
